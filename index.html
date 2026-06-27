@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InAmigos Foundation – Uniting Minds for a Change</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ══════════ NAV ══════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="dot" style="background:var(--blue)"></span>
+          <span class="dot" style="background:var(--green)"></span>
+          <span class="dot" style="background:var(--orange)"></span>
+          <span class="dot" style="background:var(--red)"></span>
+        </div>
+        <span class="logo-text">InAmigos<em>Foundation</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#impact">Impact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="index.html" onclick="closeMobile()">Home</a></li>
+      <li><a href="index.html#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="index.html#impact" onclick="closeMobile()">Impact</a></li>
+      <li><a href="gallery.html" onclick="closeMobile()">Gallery</a></li>
+      <li><a href="volunteer.html" onclick="closeMobile()">Volunteer</a></li>
+      <li><a href="donate.html" onclick="closeMobile()">Donate</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobile()"></div>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Uniting Minds for a Change · Est. 2020
+      </div>
+      <h1 class="hero-heading reveal">
+        Every <em>child</em> deserves<br/>
+        a future.<br/>
+        Every <em>life</em> has worth.
+      </h1>
+      <p class="hero-sub reveal">
+        InAmigos Foundation — working across 28 states of India through food, education,
+        women empowerment, animal welfare, and sustainability.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="volunteer.html" class="btn btn-primary">Join the Mission</a>
+        <a href="#story" class="btn btn-ghost">Our Story ↓</a>
+      </div>
+      <div class="hero-proof reveal">
+        <div class="proof-item"><span class="proof-num">50K+</span><span class="proof-lbl">Lives Touched</span></div>
+        <div class="proof-divider"></div>
+        <div class="proof-item"><span class="proof-num">28</span><span class="proof-lbl">States</span></div>
+        <div class="proof-divider"></div>
+        <div class="proof-item"><span class="proof-num">30K+</span><span class="proof-lbl">Interns Trained</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══════════ STORY ══════════ -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-text reveal">
+          <span class="section-label">Who We Are</span>
+          <h2>Started with one idea:<br/><em>No one should be left behind.</em></h2>
+          <p>On September 23, 2020, Mr. Govind Shukla founded InAmigos Foundation in Bilaspur, Chhattisgarh — a Section 8 non-profit with a simple but powerful belief: collective action can heal society's deepest wounds.</p>
+          <p>Today, we operate across <strong>28 states</strong>, run <strong>6 flagship projects</strong>, and have trained <strong>30,000+ interns</strong> who carry our mission forward.</p>
+          <div class="certs-row">
+            <span class="cert">80G</span>
+            <span class="cert">12A</span>
+            <span class="cert">CSR-1</span>
+            <span class="cert">NITI Aayog</span>
+            <span class="cert">ISO 9001:2015</span>
+          </div>
+        </div>
+        <div class="story-right reveal">
+          <div class="founder-card">
+            <div class="founder-avatar">GS</div>
+            <div class="founder-info">
+              <strong>Mr. Govind Shukla</strong>
+              <span>Founder & CEO</span>
+            </div>
+            <blockquote class="founder-quote">
+              "Every contribution creates ripples — in food, education, and hope."
+            </blockquote>
+          </div>
+          <div class="story-stats">
+            <div class="s-stat"><span class="s-num">28</span><span class="s-lbl">States</span></div>
+            <div class="s-stat"><span class="s-num">6</span><span class="s-lbl">Projects</span></div>
+            <div class="s-stat"><span class="s-num">30K+</span><span class="s-lbl">Interns</span></div>
+            <div class="s-stat"><span class="s-num">50K+</span><span class="s-lbl">Lives</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PROJECTS ══════════ -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">What We Do</span>
+        <h2>Six projects.<br/><em>One shared purpose.</em></h2>
+        <p class="section-sub">Each initiative targets a root cause — together, they form a complete circle of care.</p>
+      </div>
+    </div>
+
+    <div class="projects-river">
+
+      <div class="project-panel reveal" data-accent="#F4831F">
+        <div class="panel-bg-num">01</div>
+        <div class="container panel-inner">
+          <div class="panel-icon-wrap" style="--accent:#F4831F">
+            <span class="panel-emoji">🍚</span>
+          </div>
+          <div class="panel-content">
+            <span class="panel-tag" style="color:#F4831F">Relief · Food & Essentials</span>
+            <h3>Project Seva</h3>
+            <p>Seva means service — and we deliver it daily. Regular food and clothing distribution drives ensure no family, no homeless individual, sleeps hungry. From community kitchens to mobile food trucks, Seva is compassion in action.</p>
+            <div class="panel-stat">
+              <span class="pstat-num">Daily</span>
+              <span class="pstat-lbl">Food drives across India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-panel reveal alt" data-accent="#2196F3">
+        <div class="panel-bg-num">02</div>
+        <div class="container panel-inner">
+          <div class="panel-icon-wrap" style="--accent:#2196F3">
+            <span class="panel-emoji">📚</span>
+          </div>
+          <div class="panel-content">
+            <span class="panel-tag" style="color:#2196F3">Education · Children</span>
+            <h3>Project Bachpanshala</h3>
+            <p>Bachpan means childhood. Shala means school. Together, they stand for something every child deserves. We create learning spaces for underprivileged children — providing study materials, mentorship, and a safe, joyful environment to grow.</p>
+            <div class="panel-stat">
+              <span class="pstat-num">28 States</span>
+              <span class="pstat-lbl">Active learning centres</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-panel reveal" data-accent="#2D8B57">
+        <div class="panel-bg-num">03</div>
+        <div class="container panel-inner">
+          <div class="panel-icon-wrap" style="--accent:#2D8B57">
+            <span class="panel-emoji">🐾</span>
+          </div>
+          <div class="panel-content">
+            <span class="panel-tag" style="color:#2D8B57">Animal Welfare</span>
+            <h3>Project Jeev</h3>
+            <p>Jeev means life. Because compassion has no species barrier. We rescue, protect, and provide feeding support to stray and vulnerable animals. Every creature deserves dignity — and we're here to make sure they get it.</p>
+            <div class="panel-stat">
+              <span class="pstat-num">Rescue</span>
+              <span class="pstat-lbl">Street animal protection drives</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-panel reveal alt" data-accent="#9C27B0">
+        <div class="panel-bg-num">04</div>
+        <div class="container panel-inner">
+          <div class="panel-icon-wrap" style="--accent:#9C27B0">
+            <span class="panel-emoji">👩‍💼</span>
+          </div>
+          <div class="panel-content">
+            <span class="panel-tag" style="color:#9C27B0">Empowerment · Women</span>
+            <h3>Project Udaan</h3>
+            <p>Udaan means flight. We equip women with vocational skills, financial literacy, and the confidence to build independent futures. Through structured workshops and mentorship networks, we help women not just survive — but soar.</p>
+            <div class="panel-stat">
+              <span class="pstat-num">Statewide</span>
+              <span class="pstat-lbl">Skill empowerment workshops</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-panel reveal" data-accent="#2D8B57">
+        <div class="panel-bg-num">05</div>
+        <div class="container panel-inner">
+          <div class="panel-icon-wrap" style="--accent:#2D8B57">
+            <span class="panel-emoji">🌱</span>
+          </div>
+          <div class="panel-content">
+            <span class="panel-tag" style="color:#2D8B57">Environment · Sustainability</span>
+            <h3>Project Prakriti</h3>
+            <p>Prakriti means nature. Through tree plantation drives, river clean-ups, and environmental awareness campaigns, we protect the planet for the generations who'll inherit it. Thousands of trees planted — and counting.</p>
+            <div class="panel-stat">
+              <span class="pstat-num">1000s</span>
+              <span class="pstat-lbl">Trees planted across India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-panel reveal alt" data-accent="#E84040">
+        <div class="panel-bg-num">06</div>
+        <div class="container panel-inner">
+          <div class="panel-icon-wrap" style="--accent:#E84040">
+            <span class="panel-emoji">🎓</span>
+          </div>
+          <div class="panel-content">
+            <span class="panel-tag" style="color:#E84040">Skill Building · Youth</span>
+            <h3>Project Vikas</h3>
+            <p>Vikas means development. We prepare young people with professional and digital skills for the real world. Over 30,000 interns trained. 250+ have joined us permanently. This is how we grow together — by growing each other.</p>
+            <div class="panel-stat">
+              <span class="pstat-num">30K+</span>
+              <span class="pstat-lbl">Interns trained · 250+ joined permanently</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ IMPACT ══════════ -->
+  <section class="impact-section" id="impact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label light">Our Impact</span>
+        <h2 class="light-h">Numbers that<br/><em>tell real stories.</em></h2>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card reveal">
+          <span class="i-num" data-target="50000">0</span><span class="i-suffix">+</span>
+          <span class="i-lbl">Lives Touched</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="i-num" data-target="28">0</span>
+          <span class="i-lbl">States Active</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="i-num" data-target="200">0</span><span class="i-suffix">+</span>
+          <span class="i-lbl">Volunteers</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="i-num" data-target="30000">0</span><span class="i-suffix">+</span>
+          <span class="i-lbl">Interns Trained</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="i-num" data-target="250">0</span><span class="i-suffix">+</span>
+          <span class="i-lbl">Permanent Members</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="i-num" data-target="6">0</span>
+          <span class="i-lbl">Flagship Projects</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ EMOTION STRIP ══════════ -->
+  <section class="quote-strip">
+    <div class="container">
+      <div class="quote-inner reveal">
+        <div class="big-quote">"</div>
+        <p>We don't help people because it looks good. We help because it is right.</p>
+        <cite>— Mr. Govind Shukla, Founder</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CTA ══════════ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="section-label">Take Action</span>
+        <h2>You can be the reason<br/><em>someone smiles today.</em></h2>
+        <p>Volunteer your time, donate what you can, or simply share our work.<br/>Every action creates a ripple.</p>
+        <div class="cta-actions">
+          <a href="volunteer.html" class="btn btn-primary">Become a Volunteer</a>
+          <a href="donate.html" class="btn btn-outline">Support with Donation</a>
+        </div>
+        <p class="hashtag-line">#InAmigos &nbsp;·&nbsp; #TogetherWeRise &nbsp;·&nbsp; #MakeADifference</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <span class="dot" style="background:var(--blue)"></span>
+              <span class="dot" style="background:var(--green)"></span>
+              <span class="dot" style="background:var(--orange)"></span>
+              <span class="dot" style="background:var(--red)"></span>
+            </div>
+            <span class="logo-text">InAmigos<em>Foundation</em></span>
+          </div>
+          <p>A Section 8 non-profit building a compassionate, inclusive, and empowered India — one life at a time.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/inamigos/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/InAmigos/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://in.linkedin.com/company/inamigos-foundation" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="#projects">Seva</a></li>
+            <li><a href="#projects">Bachpanshala</a></li>
+            <li><a href="#projects">Jeev</a></li>
+            <li><a href="#projects">Udaan</a></li>
+            <li><a href="#projects">Prakriti</a></li>
+            <li><a href="#projects">Vikas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>📍 Bilaspur, Chhattisgarh 495555</li>
+            <li>📞 <a href="tel:+916267309902">+91 626 730 9902</a></li>
+            <li>✉️ <a href="mailto:support@inamigosfoundation.org.in">support@inamigosfoundation.org.in</a></li>
+          </ul>
+          <div class="footer-certs">
+            <span>80G</span><span>12A</span><span>CSR-1</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InAmigos Foundation · All rights reserved</span>
+        <span>Made with ❤️ by an InAmigos Intern</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
