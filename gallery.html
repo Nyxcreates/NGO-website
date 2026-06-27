@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — InAmigos Foundation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="dot" style="background:var(--blue)"></span>
+          <span class="dot" style="background:var(--green)"></span>
+          <span class="dot" style="background:var(--orange)"></span>
+          <span class="dot" style="background:var(--red)"></span>
+        </div>
+        <span class="logo-text">InAmigos<em>Foundation</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#impact">Impact</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <ul>
+      <li><a href="index.html" onclick="closeMobile()">Home</a></li>
+      <li><a href="index.html#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="index.html#impact" onclick="closeMobile()">Impact</a></li>
+      <li><a href="gallery.html" onclick="closeMobile()">Gallery</a></li>
+      <li><a href="volunteer.html" onclick="closeMobile()">Volunteer</a></li>
+      <li><a href="donate.html" onclick="closeMobile()">Donate</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobile()"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Our Work in Pictures</span>
+      <h1 class="reveal">Gallery</h1>
+      <p class="reveal">Real moments. Real impact. See InAmigos Foundation in action across India.</p>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container">
+
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="seva">Seva</button>
+        <button class="filter-btn" data-filter="bachpanshala">Bachpanshala</button>
+        <button class="filter-btn" data-filter="jeev">Jeev</button>
+        <button class="filter-btn" data-filter="udaan">Udaan</button>
+        <button class="filter-btn" data-filter="prakriti">Prakriti</button>
+        <button class="filter-btn" data-filter="vikas">Vikas</button>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!--
+          HOW TO ADD REAL IMAGES:
+          Replace the gallery-placeholder div with:
+          <img src="images/your-photo.jpg" alt="Description of the photo"/>
+
+          Add data-cat attribute matching the project:
+          seva | bachpanshala | jeev | udaan | prakriti | vikas
+        -->
+
+        <div class="gallery-item reveal" data-cat="seva">
+          <div><img src="images/Children.jpeg" alt="Providing food, clean water, clothing, and essential support to families facing hardship. Every act of kindness brings hope, dignity, and a chance for a better tomorrow."/></div>
+          <div class="gallery-overlay"><span>Project Seva</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="seva">
+          <div><img src="images/DonationForKids.jpeg" alt="Every donation helps provide education, food, healthcare, rescue support, and hope to those who need it the most. Together, we can build a brighter future."/></div>
+          <div class="gallery-overlay"><span>Project Seva</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="bachpanshala">
+          <div><img src="images/Education.jpeg" alt="Ensuring every child has access to quality education, learning resources, mentorship, and opportunities to dream beyond their circumstances."/></div>
+          <div class="gallery-overlay"><span>Bachpanshala</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="bachpanshala">
+          <div><img src="images/Bachpanshala — Classroom.jpg" alt="Empowering underprivileged children through quality education, mentorship, and joyful learning experiences that build a brighter future."/></div>
+          <div class="gallery-overlay"><span>Bachpanshala</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="jeev">
+          <div><img src="images/Animal.jpeg" alt="Protecting, rescuing, and caring for abandoned and injured animals while promoting compassion and responsible community care."/></div>
+          <div class="gallery-overlay"><span>Project Jeev</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="udaan">
+          <div><img src="images/Udaan.jpeg" alt="Helping women gain practical skills, confidence, and financial independence through training and career development programs."/></div>
+          <div class="gallery-overlay"><span>Project Udaan</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="prakriti">
+          <div><img src="images/plant.jpeg" alt="Creating a greener tomorrow by planting trees, restoring nature, and encouraging environmental responsibility."/></div>
+          <div class="gallery-overlay"><span>Project Prakriti</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="prakriti">
+          <div><img src="images/plant-cleanup-drive.jpeg" alt="Bringing communities together to clean public spaces, reduce pollution, and promote sustainable living."/></div>
+          <div class="gallery-overlay"><span>Project Prakriti</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="vikas">
+          <div><img src="images/Vikas-internship.png" alt="Providing students and young professionals with real-world experience, leadership opportunities, and career growth."/></div>
+          <div class="gallery-overlay"><span>Project Vikas</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="vikas">
+          <div><img src="images/Vikas-digital-skills.png" alt="Equipping youth with modern digital and professional skills to prepare them for future careers and entrepreneurship."/></div>
+          <div class="gallery-overlay"><span>Project Vikas</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="seva">
+          <div><img src="images/CommunityServer.avif" alt="Extending timely support to families through food distribution, relief drives, healthcare awareness, and essential resources."/></div>
+          <div class="gallery-overlay"><span>Project Seva</span></div>
+        </div>
+        <div class="gallery-item reveal" data-cat="jeev">
+          <div><img src="images/Jeev — Feeding Drive.jpeg" alt="Protecting and caring for stray animals through regular feeding, rescue efforts, medical support, and compassionate action."/></div>
+          <div class="gallery-overlay"><span>Project Jeev</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo submission CTA -->
+  <section style="background:var(--warm-gray); padding:72px 0; text-align:center;">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">Share Your Moment</span>
+        <h2 style="margin-bottom:16px;">Were you part of our story?</h2>
+        <p style="max-width:460px; margin: 0 auto 32px;">If you have photos from InAmigos events, share them with us — they'll inspire the next volunteer.</p>
+        <a href="mailto:support@inamigosfoundation.org.in?subject=Photo Submission" class="btn btn-primary">Submit Your Photos</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <span class="dot" style="background:var(--blue)"></span>
+              <span class="dot" style="background:var(--green)"></span>
+              <span class="dot" style="background:var(--orange)"></span>
+              <span class="dot" style="background:var(--red)"></span>
+            </div>
+            <span class="logo-text">InAmigos<em>Foundation</em></span>
+          </div>
+          <p>A Section 8 non-profit building a compassionate, inclusive, and empowered India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="index.html#projects">Seva</a></li>
+            <li><a href="index.html#projects">Bachpanshala</a></li>
+            <li><a href="index.html#projects">Jeev</a></li>
+            <li><a href="index.html#projects">Udaan</a></li>
+            <li><a href="index.html#projects">Prakriti</a></li>
+            <li><a href="index.html#projects">Vikas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>📍 Bilaspur, Chhattisgarh 495555</li>
+            <li>📞 <a href="tel:+916267309902">+91 626 730 9902</a></li>
+            <li>✉️ <a href="mailto:support@inamigosfoundation.org.in">support@inamigosfoundation.org.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InAmigos Foundation · All rights reserved</span>
+        <span>Made with ❤️ by an InAmigos Intern</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
