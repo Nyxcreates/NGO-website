@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate — InAmigos Foundation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="dot" style="background:var(--blue)"></span>
+          <span class="dot" style="background:var(--green)"></span>
+          <span class="dot" style="background:var(--orange)"></span>
+          <span class="dot" style="background:var(--red)"></span>
+        </div>
+        <span class="logo-text">InAmigos<em>Foundation</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#impact">Impact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="donate.html" class="nav-donate active">Donate</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <ul>
+      <li><a href="index.html" onclick="closeMobile()">Home</a></li>
+      <li><a href="index.html#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="index.html#impact" onclick="closeMobile()">Impact</a></li>
+      <li><a href="gallery.html" onclick="closeMobile()">Gallery</a></li>
+      <li><a href="volunteer.html" onclick="closeMobile()">Volunteer</a></li>
+      <li><a href="donate.html" onclick="closeMobile()">Donate</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobile()"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Make a Difference</span>
+      <h1 class="reveal">Support the <em>Mission</em></h1>
+      <p class="reveal">Your donation feeds a child, plants a tree, rescues an animal, and empowers a woman. Every rupee matters.</p>
+    </div>
+  </section>
+
+  <section class="donate-section">
+    <div class="container">
+      <div class="donate-grid">
+
+        <div class="donate-left">
+          <div class="reveal">
+            <span class="section-label">Your Impact</span>
+            <h2>Small contributions<br/><em>change big lives.</em></h2>
+            <p>100% of your donation goes directly to our projects. We are a certified 80G NGO — your donation is tax deductible.</p>
+          </div>
+          <div class="donate-why">
+            <div class="why-item reveal">
+              <div class="why-num">₹</div>
+              <div>
+                <h4>₹100 — Feeds a Family</h4>
+                <p>Provides a hot meal to an entire family through Project Seva's daily distribution drives.</p>
+              </div>
+            </div>
+            <div class="why-item reveal">
+              <div class="why-num">₹</div>
+              <div>
+                <h4>₹500 — Educates a Child</h4>
+                <p>Covers study materials, notebooks, and stationery for one child in Project Bachpanshala for a month.</p>
+              </div>
+            </div>
+            <div class="why-item reveal">
+              <div class="why-num">₹</div>
+              <div>
+                <h4>₹1000 — Plants 10 Trees</h4>
+                <p>Funds saplings, soil, and planting labour for ten trees in Project Prakriti's green drives.</p>
+              </div>
+            </div>
+            <div class="why-item reveal">
+              <div class="why-num">₹</div>
+              <div>
+                <h4>₹2000 — Empowers a Woman</h4>
+                <p>Covers skills workshop registration and materials for one woman in Project Udaan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bank-details reveal">
+            <h4>📋 Bank Transfer Details</h4>
+            <div class="bank-row"><span>Account Name</span><strong>InAmigos Foundation</strong></div>
+            <div class="bank-row"><span>Account Type</span><strong>Current Account</strong></div>
+            <div class="bank-row"><span>Bank</span><strong>028205005839</strong></div>
+            <div class="bank-row"><span>IFSC</span><strong> ICIC0000282</strong></div>
+            <div class="bank-row"><span>Email</span><strong>inamigosfoundation@gmail.com</strong></div>
+          </div>
+        </div>
+
+        <div class="donate-card reveal">
+          <h3>Choose an Amount</h3>
+
+          <div class="amount-grid">
+            <button class="amount-btn" data-amount="100">₹100</button>
+            <button class="amount-btn selected" data-amount="500">₹500</button>
+            <button class="amount-btn" data-amount="1000">₹1,000</button>
+            <button class="amount-btn" data-amount="2000">₹2,000</button>
+            <button class="amount-btn" data-amount="5000">₹5,000</button>
+            <button class="amount-btn" data-amount="">Custom</button>
+          </div>
+
+          <div class="form-group custom-amount">
+            <label for="customAmount">Or enter amount (₹)</label>
+            <span>₹</span>
+            <input type="number" id="customAmount" placeholder="Enter amount" min="1" value="500"/>
+          </div>
+
+          <div class="form-group">
+            <label for="donateName">Your Name</label>
+            <input type="text" id="donateName" placeholder="Priya Verma"/>
+          </div>
+          <div class="form-group">
+            <label for="donateEmail">Email (for 80G receipt)</label>
+            <input type="email" id="donateEmail" placeholder="priya@example.com"/>
+          </div>
+          <div class="form-group">
+            <label for="donatePurpose">Donate toward (optional)</label>
+            <select id="donatePurpose">
+              <option value="general">General Fund — Where Needed Most</option>
+              <option value="seva">Project Seva — Food Relief</option>
+              <option value="bachpanshala">Project Bachpanshala — Education</option>
+              <option value="jeev">Project Jeev — Animal Welfare</option>
+              <option value="udaan">Project Udaan — Women Empowerment</option>
+              <option value="prakriti">Project Prakriti — Environment</option>
+              <option value="vikas">Project Vikas — Youth Skills</option>
+            </select>
+          </div>
+
+          <!-- UPI SECTION -->
+          <div class="upi-section">
+            <h4>💳 Pay via UPI / QR Code</h4>
+            <div class="upi-box">
+              <!--
+                IMPORTANT: To add your real QR code:
+                1. Place your QR image in images/upi-qr.png
+                2. Replace the div below with:
+                   <img src="images/upi-qr.png" alt="InAmigos UPI QR Code" style="width:180px; height:180px; margin:0 auto 16px; display:block; border-radius:8px;"/>
+              -->
+              <div class="qr-placeholder">
+               <img src="images/Qr.png.jpeg" alt="UPI QR"/>
+              </div>
+              <div>
+                <div class="upi-id" id="copyUpi" data-upi="inamigosfoundation@icici" title="Click to copy" style="cursor:pointer;">
+                  inamigosfoundation@icici ⎘
+                </div>
+                <p class="upi-hint">Scan with GPay, PhonePe, Paytm, or any UPI app<br/>Click the ID above to copy it</p>
+              </div>
+            </div>
+
+            <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr;">
+              <a href="upi://pay?pa=inamigosfoundation@upi&pn=InAmigos+Foundation&mc=&tid=&tr=&tn=Donation&am=&cu=INR"
+                 class="btn btn-primary" style="justify-content:center; font-size:0.9rem;">
+                📱 Open UPI App
+            </a>
+            </div>
+            <!-- Replace the Razorpay link above with your actual payment gateway link -->
+          </div>
+
+          <div class="tax-note">
+            <span>✅</span>
+            <span>Donations are eligible for 80G tax deduction. Receipt will be emailed to you.</span>
+          </div>
+
+          <div style="margin-top:20px; padding:16px; background:rgba(244,131,31,0.06); border-radius:10px; border:1px solid rgba(244,131,31,0.15);">
+            <p style="font-size:0.83rem; text-align:center; color:var(--text);">
+              After payment, email your transaction screenshot to<br/>
+              <a href="mailto:support@inamigosfoundation.org.in" style="color:var(--orange); font-weight:600;">inamigosfoundation@gmail.com</a><br/>
+              to receive your certificate.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust band -->
+  <section style="background:var(--warm-gray); padding:60px 0; border-top:1px solid var(--border);">
+    <div class="container">
+      <div style="display:flex; gap:32px; justify-content:center; flex-wrap:wrap; text-align:center;" class="reveal">
+        <div><div style="font-size:1.5rem; margin-bottom:6px;">🏛️</div><div style="font-size:0.8rem; font-weight:600; color:var(--text);">Section 8 NGO</div></div>
+        <div><div style="font-size:1.5rem; margin-bottom:6px;">📋</div><div style="font-size:0.8rem; font-weight:600; color:var(--text);">80G Certified</div></div>
+        <div><div style="font-size:1.5rem; margin-bottom:6px;">✅</div><div style="font-size:0.8rem; font-weight:600; color:var(--text);">12A Registered</div></div>
+        <div><div style="font-size:1.5rem; margin-bottom:6px;">🌐</div><div style="font-size:0.8rem; font-weight:600; color:var(--text);">NITI Aayog Listed</div></div>
+        <div><div style="font-size:1.5rem; margin-bottom:6px;">🏅</div><div style="font-size:0.8rem; font-weight:600; color:var(--text);">ISO 9001:2015</div></div>
+        <div><div style="font-size:1.5rem; margin-bottom:6px;">💼</div><div style="font-size:0.8rem; font-weight:600; color:var(--text);">CSR-1 Eligible</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <span class="dot" style="background:var(--blue)"></span>
+              <span class="dot" style="background:var(--green)"></span>
+              <span class="dot" style="background:var(--orange)"></span>
+              <span class="dot" style="background:var(--red)"></span>
+            </div>
+            <span class="logo-text">InAmigos<em>Foundation</em></span>
+          </div>
+          <p>A Section 8 non-profit building a compassionate, inclusive, and empowered India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="index.html#projects">Seva</a></li>
+            <li><a href="index.html#projects">Bachpanshala</a></li>
+            <li><a href="index.html#projects">Jeev</a></li>
+            <li><a href="index.html#projects">Udaan</a></li>
+            <li><a href="index.html#projects">Prakriti</a></li>
+            <li><a href="index.html#projects">Vikas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>📍 Bilaspur, Chhattisgarh 495555</li>
+            <li>🌐 <a href="https://www.inamigosfoundation.org" target="_blank">www.inamigosfoundation.org</a></li>
+            <li>💼 <a href="https://www.linkedin.com/company/inamigos-foundation" target="_blank">InAmigosFoundation</a></li>
+            <li>📸 <a href="https://www.instagram.com/inamigos" target="_blank">@inamigos</a></li>
+            <li>✉️ <a href="inamigosfoundation@gmail.com">inamigosfoundation@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InAmigos Foundation · All rights reserved</span>
+        <span>Made with ❤️ by an InAmigos Intern</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
