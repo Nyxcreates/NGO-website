@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up — InAmigos Foundation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="dot" style="background:var(--blue)"></span>
+          <span class="dot" style="background:var(--green)"></span>
+          <span class="dot" style="background:var(--orange)"></span>
+          <span class="dot" style="background:var(--red)"></span>
+        </div>
+        <span class="logo-text">InAmigos<em>Foundation</em></span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon" style="margin:0 auto 12px; width:36px; height:36px; gap:4px;">
+          <span class="dot" style="background:var(--blue); width:16px; height:16px;"></span>
+          <span class="dot" style="background:var(--green); width:16px; height:16px;"></span>
+          <span class="dot" style="background:var(--orange); width:16px; height:16px;"></span>
+          <span class="dot" style="background:var(--red); width:16px; height:16px;"></span>
+        </div>
+        <div class="logo-text" style="color:var(--navy); justify-content:center; display:flex; font-size:1rem;">
+          InAmigos<em>Foundation</em>
+        </div>
+      </div>
+
+      <h2>Join the family</h2>
+      <p class="subtitle">Create your volunteer account</p>
+
+      <div id="signupError" style="display:none; padding:12px 16px; background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; color:#DC2626; font-size:0.88rem; margin-bottom:16px;"></div>
+      <div id="signupSuccess" style="display:none; padding:12px 16px; background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; color:#16A34A; font-size:0.88rem; margin-bottom:16px;"></div>
+
+      <form id="signupForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signupFirst">First Name *</label>
+            <input type="text" id="signupFirst" placeholder="Ananya" required/>
+          </div>
+          <div class="form-group">
+            <label for="signupLast">Last Name *</label>
+            <input type="text" id="signupLast" placeholder="Sharma" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email Address *</label>
+          <input type="email" id="signupEmail" placeholder="you@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="signupPhone">Phone Number</label>
+          <input type="tel" id="signupPhone" placeholder="+91 98765 43210"/>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password *</label>
+          <input type="password" id="signupPassword" placeholder="At least 8 characters" minlength="8" required/>
+        </div>
+        <div class="form-group">
+          <label for="signupConfirm">Confirm Password *</label>
+          <input type="password" id="signupConfirm" placeholder="Repeat your password" required/>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start; margin-bottom:20px; font-size:0.85rem; color:var(--muted);">
+          <input type="checkbox" id="signupTerms" style="margin-top:2px; flex-shrink:0;" required/>
+          <label for="signupTerms">I agree to InAmigos Foundation's terms and consent to be contacted regarding volunteer opportunities.</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" id="signupBtn">
+          Create Account →
+        </button>
+      </form>
+
+      <div class="auth-switch">
+        Already have an account? <a href="login.html">Sign in →</a>
+      </div>
+      <div style="text-align:center; margin-top:16px;">
+        <a href="index.html" style="font-size:0.85rem; color:var(--muted);">← Back to website</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('signupBtn');
+      const errorEl = document.getElementById('signupError');
+      const successEl = document.getElementById('signupSuccess');
+      errorEl.style.display = 'none';
+      successEl.style.display = 'none';
+
+      const password = document.getElementById('signupPassword').value;
+      const confirm = document.getElementById('signupConfirm').value;
+
+      if (password !== confirm) {
+        errorEl.textContent = 'Passwords do not match.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      btn.textContent = 'Creating account…';
+      btn.disabled = true;
+
+      const body = {
+        firstName: document.getElementById('signupFirst').value,
+        lastName: document.getElementById('signupLast').value,
+        email: document.getElementById('signupEmail').value,
+        phone: document.getElementById('signupPhone').value,
+        password
+      };
+
+      try {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          successEl.textContent = '🎉 Account created! Redirecting…';
+          successEl.style.display = 'block';
+          setTimeout(() => window.location.href = 'volunteer.html', 1500);
+        } else {
+          errorEl.textContent = data.message || 'Something went wrong. Please try again.';
+          errorEl.style.display = 'block';
+          btn.textContent = 'Create Account →';
+          btn.disabled = false;
+        }
+      } catch {
+        errorEl.textContent = 'Unable to connect to server. Please try again.';
+        errorEl.style.display = 'block';
+        btn.textContent = 'Create Account →';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
