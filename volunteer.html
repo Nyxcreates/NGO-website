@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer — InAmigos Foundation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="dot" style="background:var(--blue)"></span>
+          <span class="dot" style="background:var(--green)"></span>
+          <span class="dot" style="background:var(--orange)"></span>
+          <span class="dot" style="background:var(--red)"></span>
+        </div>
+        <span class="logo-text">InAmigos<em>Foundation</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#impact">Impact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="volunteer.html" class="active">Volunteer</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <ul>
+      <li><a href="index.html" onclick="closeMobile()">Home</a></li>
+      <li><a href="index.html#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="index.html#impact" onclick="closeMobile()">Impact</a></li>
+      <li><a href="gallery.html" onclick="closeMobile()">Gallery</a></li>
+      <li><a href="volunteer.html" onclick="closeMobile()">Volunteer</a></li>
+      <li><a href="donate.html" onclick="closeMobile()">Donate</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobile()"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Join the Family</span>
+      <h1 class="reveal">Become a <em>Volunteer</em></h1>
+      <p class="reveal">250+ interns have already joined us permanently. Your journey could start right here.</p>
+    </div>
+  </section>
+
+  <section class="volunteer-section">
+    <div class="container">
+      <div class="volunteer-grid">
+
+        <div class="vol-left">
+          <div class="reveal">
+            <span class="section-label">Why Join?</span>
+            <h2>More than an internship.<br/><em>A real beginning.</em></h2>
+            <p>At InAmigos Foundation, volunteers aren't box-tickers. You'll work on real drives, real campaigns, and real impact — then see it with your own eyes.</p>
+          </div>
+
+          <div class="volunteer-benefits">
+            <div class="benefit-item reveal">
+              <div class="benefit-icon">🎓</div>
+              <div>
+                <h4>Internship Certificate</h4>
+                <p>Receive an official certificate after completing your internship term — valued by employers across industries.</p>
+              </div>
+            </div>
+            <div class="benefit-item reveal">
+              <div class="benefit-icon">🌐</div>
+              <div>
+                <h4>Nationwide Network</h4>
+                <p>Connect with 30,000+ fellow interns and 200+ volunteers across 28 states of India.</p>
+              </div>
+            </div>
+            <div class="benefit-item reveal">
+              <div class="benefit-icon">💡</div>
+              <div>
+                <h4>Real Skill Building</h4>
+                <p>From social media to event management to outreach — you'll leave with skills and stories that matter.</p>
+              </div>
+            </div>
+            <div class="benefit-item reveal">
+              <div class="benefit-icon">❤️</div>
+              <div>
+                <h4>A Purpose-Driven Culture</h4>
+                <p>We're not just colleagues — we're a family. 250+ of our interns joined us full-time. You could be next.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <h3>Apply to Volunteer</h3>
+
+          <div id="formSuccess" class="form-success">
+            <div class="success-icon">🎉</div>
+            <h3>Application Received!</h3>
+            <p>Thank you for stepping up. Our team will reach out to you within 2–3 working days.</p>
+            <br/>
+            <a href="index.html" class="btn btn-primary" style="display:inline-flex;">Back to Home</a>
+          </div>
+
+          <form id="volunteerForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Ananya" required/>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Sharma" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required/>
+            </div>
+            <div class="form-group">
+              <label for="city">City / State</label>
+              <input type="text" id="city" name="city" placeholder="Mumbai, Maharashtra"/>
+            </div>
+            <div class="form-group">
+              <label for="project">Project of Interest</label>
+              <select id="project" name="project">
+                <option value="">Select a project…</option>
+                <option value="seva">Project Seva — Food & Relief</option>
+                <option value="bachpanshala">Project Bachpanshala — Education</option>
+                <option value="jeev">Project Jeev — Animal Welfare</option>
+                <option value="udaan">Project Udaan — Women Empowerment</option>
+                <option value="prakriti">Project Prakriti — Environment</option>
+                <option value="vikas">Project Vikas — Youth Skill Building</option>
+                <option value="any">Open to Any Project</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Why do you want to volunteer?</label>
+              <textarea id="message" name="message" placeholder="Tell us a little about yourself and what drives you…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              Submit Application →
+            </button>
+            <p style="font-size:0.8rem; color:var(--muted); text-align:center; margin-top:12px;">
+              We respond within 2–3 working days. No spam, ever.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section style="background:var(--navy); padding:64px 0;">
+    <div class="container">
+      <div style="display:flex; gap:48px; justify-content:center; flex-wrap:wrap; text-align:center;">
+        <div class="reveal">
+          <div style="font-family:var(--font-display); font-size:2.4rem; font-weight:900; color:var(--orange);">30K+</div>
+          <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Interns Trained</div>
+        </div>
+        <div class="reveal">
+          <div style="font-family:var(--font-display); font-size:2.4rem; font-weight:900; color:var(--orange);">250+</div>
+          <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Joined Permanently</div>
+        </div>
+        <div class="reveal">
+          <div style="font-family:var(--font-display); font-size:2.4rem; font-weight:900; color:var(--orange);">28</div>
+          <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">States Active</div>
+        </div>
+        <div class="reveal">
+          <div style="font-family:var(--font-display); font-size:2.4rem; font-weight:900; color:var(--orange);">200+</div>
+          <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em; margin-top:4px;">Volunteers Right Now</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <span class="dot" style="background:var(--blue)"></span>
+              <span class="dot" style="background:var(--green)"></span>
+              <span class="dot" style="background:var(--orange)"></span>
+              <span class="dot" style="background:var(--red)"></span>
+            </div>
+            <span class="logo-text">InAmigos<em>Foundation</em></span>
+          </div>
+          <p>A Section 8 non-profit building a compassionate, inclusive, and empowered India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="index.html#projects">Seva</a></li>
+            <li><a href="index.html#projects">Bachpanshala</a></li>
+            <li><a href="index.html#projects">Jeev</a></li>
+            <li><a href="index.html#projects">Udaan</a></li>
+            <li><a href="index.html#projects">Prakriti</a></li>
+            <li><a href="index.html#projects">Vikas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li>📍 Bilaspur, Chhattisgarh 495555</li>
+            <li>📞 <a href="tel:+916267309902">+91 626 730 9902</a></li>
+            <li>✉️ <a href="mailto:support@inamigosfoundation.org.in">support@inamigosfoundation.org.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InAmigos Foundation · All rights reserved</span>
+        <span>Made with ❤️ by an InAmigos Intern</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
