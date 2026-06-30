@@ -166,25 +166,38 @@
               </div>
             </div>
 
-            <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr;">
-              <a href="upi://pay?pa=inamigosfoundation@upi&pn=InAmigos+Foundation&mc=&tid=&tr=&tn=Donation&am=&cu=INR"
+            <div style="margin-top:20px;">
+              <a href="upi://pay?pa=inamigosfoundation@icici&pn=InAmigos+Foundation&mc=&tid=&tr=&tn=Donation&am=&cu=INR"
                  class="btn btn-primary" style="justify-content:center; font-size:0.9rem;">
-                📱 Open UPI App
+                📱 Pay via Gpay
             </a>
             </div>
+            </div>
             <!-- Replace the Razorpay link above with your actual payment gateway link -->
+           <div class="form-group" style="margin-top:16px;">
+              <label for="transactionId">Transaction ID (after paying, paste it here)</label>
+              <input type="text" id="transactionId" placeholder="e.g. 234567891234"/>
+            </div>
           </div>
 
           <div class="tax-note">
             <span>✅</span>
             <span>Donations are eligible for 80G tax deduction. Receipt will be emailed to you.</span>
           </div>
+          
+
+          <!-- Validation error summary -->
+          <div id="donateError" style="display:none; margin-top:16px; padding:12px 16px; background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; color:#DC2626; font-size:0.88rem;"></div>
+
+          <button type="button" id="submitDonationBtn" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;">
+            <span id="submitDonationLabel">Submit Donation Details</span>
+          </button>
 
           <div style="margin-top:20px; padding:16px; background:rgba(244,131,31,0.06); border-radius:10px; border:1px solid rgba(244,131,31,0.15);">
             <p style="font-size:0.83rem; text-align:center; color:var(--text);">
               After payment, email your transaction screenshot to<br/>
-              <a href="mailto:support@inamigosfoundation.org.in" style="color:var(--orange); font-weight:600;">inamigosfoundation@gmail.com</a><br/>
-              to receive your certificate.
+              <a href="mailto:inamigosfoundation@gmail.com" style="color:var(--orange); font-weight:600;">inamigosfoundation@gmail.com</a><br/>
+              to receive your 80G certificate.
             </p>
           </div>
         </div>
@@ -192,6 +205,20 @@
       </div>
     </div>
   </section>
+
+ <!-- ══════════ DONATION SUCCESS MODAL ══════════ -->
+  <div id="donationModalOverlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-icon">🎉</div>
+      <h3>Thank you for supporting InAmigos Foundation.</h3>
+      <p>Your donation request has been received successfully.</p>
+      <div id="modalReceiptId" style="font-size:0.8rem; color:var(--muted); margin-top:8px;"></div>
+      <div class="modal-actions">
+        <button type="button" id="downloadReceiptBtn" class="btn btn-outline" style="font-size:0.88rem;">⬇ Download Receipt</button>
+        <button type="button" id="closeDonationModal" class="btn btn-primary" style="font-size:0.88rem;">Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Trust band -->
   <section style="background:var(--warm-gray); padding:60px 0; border-top:1px solid var(--border);">
@@ -261,5 +288,6 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/donate.js"></script>
 </body>
 </html>
