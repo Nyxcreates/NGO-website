@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard — InAmigos Foundation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Page-scoped admin styles only — does not touch existing site CSS */
+    .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 100px 24px 80px; }
+    .admin-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .admin-tab { padding: 10px 20px; border-radius: 50px; border: 1.5px solid var(--border); background: #fff; font-weight: 600; font-size: 0.85rem; cursor: pointer; color: var(--muted); }
+    .admin-tab.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .admin-summary { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 32px; }
+    .admin-stat { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+    .admin-stat .num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--orange); }
+    .admin-stat .lbl { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .admin-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    .admin-table th, .admin-table td { padding: 12px 16px; text-align: left; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
+    .admin-table th { background: var(--warm-gray); font-weight: 600; color: var(--text); }
+    .admin-table td { color: var(--muted); }
+    .status-pill { padding: 3px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 600; }
+    .status-pending { background: #FEF3C7; color: #92400E; }
+    .status-verified { background: #D1FAE5; color: #065F46; }
+    .status-rejected { background: #FEE2E2; color: #991B1B; }
+    @media (max-width: 700px) { .admin-summary { grid-template-columns: 1fr 1fr; } .admin-table { display: block; overflow-x: auto; } }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <span class="dot" style="background:var(--blue)"></span>
+          <span class="dot" style="background:var(--green)"></span>
+          <span class="dot" style="background:var(--orange)"></span>
+          <span class="dot" style="background:var(--red)"></span>
+        </div>
+        <span class="logo-text">InAmigos<em>Foundation</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="admin-wrap">
+
+    <!-- Login gate -->
+    <div id="adminLoginGate" class="form-card" style="max-width:420px; margin:0 auto;">
+      <h3>Admin Login</h3>
+      <div id="adminLoginError" style="display:none; margin:12px 0; padding:12px 16px; background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; color:#DC2626; font-size:0.85rem;"></div>
+      <div class="form-group">
+        <label for="adminEmail">Email</label>
+        <input type="email" id="adminEmail" placeholder="admin@inamigosfoundation.org.in"/>
+      </div>
+      <div class="form-group">
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" placeholder="••••••••"/>
+      </div>
+      <button class="btn btn-primary" id="adminLoginBtn" style="width:100%; justify-content:center;">Sign In</button>
+      <p style="font-size:0.78rem; color:var(--muted); text-align:center; margin-top:12px;">
+        Requires an account with admin role. Promote a user via your database (set <code>role: 'admin'</code>).
+      </p>
+    </div>
+
+    <!-- Dashboard (hidden until authenticated) -->
+    <div id="adminDashboard" style="display:none;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; flex-wrap:wrap; gap:12px;">
+        <span class="section-label">Admin Dashboard</span>
+        <button class="btn btn-outline" id="adminLogoutBtn" style="font-size:0.85rem;">Log Out</button>
+      </div>
+
+      <div class="admin-summary" id="adminSummary"></div>
+
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="donations">Donations</button>
+        <button class="admin-tab" data-tab="volunteers">Volunteers</button>
+        <button class="admin-tab" data-tab="contacts">Contact Messages</button>
+      </div>
+
+      <div id="adminTableWrap">
+        <p style="color:var(--muted); font-size:0.9rem;">Loading…</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
